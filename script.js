@@ -11,16 +11,6 @@ const dialogBoxButton = document.querySelector(".dialog-box-button");
 const allTasks = JSON.parse(localStorage.getItem("allGoals")) || {};
 let countCompletedGoals = Object.values(allTasks).filter((task) => task.isCompleted).length;
 
-// dialog-box
-if (Object.values(allTasks).every(task => task.isCompleted === true)) {
-    const allTakCompleted = Object.values(allTasks).every(task => task.isCompleted === true);
-    setTimeout(() => {
-        if (allTakCompleted) {
-            overlay.style.display = "flex";
-        }
-    }, 500)
-}
-
 const hideAlert = () => {
     alertPara.style.display = "none";
 }
@@ -98,7 +88,14 @@ checkBox.forEach((el) => {
 
 inputs.forEach((el) => {
     if (allTasks[el.id]) {
-        el.value = allTasks[el.id].taskName;
+
+        // dialog box
+        if (Object.values(allTasks) && Object.values(allTasks).every(task => task.isCompleted === true)) {
+            setTimeout(() => {
+                overlay.style.display = "flex";
+            }, 500)
+        }
+
         if (allTasks[el.id].isCompleted) {
             el.previousElementSibling.classList.toggle("checked");
             el.classList.toggle("line-through");
