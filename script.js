@@ -88,9 +88,9 @@ checkBox.forEach((el) => {
 
 inputs.forEach((el) => {
     if (allTasks[el.id]) {
-        
+
         el.value = allTasks[el.id].taskName;
-        
+
         if (allTasks[el.id].isCompleted) {
             el.previousElementSibling.classList.toggle("checked");
             el.classList.toggle("line-through");
@@ -132,6 +132,9 @@ dialogBoxButton.addEventListener("click", () => {
         el.value = "";
         el.classList.remove("line-through");
         progressBar.style.width = "00%";
+        progressLabel.innerText = "Raise the bar by completing your goals!";
+        footerPara.innerText = "Move one step ahead, today!";
+
         allTasks[el.id] = {
             taskName: el.value,
             isCompleted: false,
