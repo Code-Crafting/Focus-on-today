@@ -1,0 +1,366 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+}
+
+:root {
+    --background-color: #F8F3D9;
+    --heading-span-color: #48A300;
+    --dialog-box-btn: #214404;
+    --heading-color: #61481C;
+    --alert-color: #FF5151;
+    --container-bg-color: #FBFBFB;
+    --ash-color: #938f8f;
+    --progress-con-bg: #48A3001A;
+}
+
+body {
+    background-color: var(--background-color);
+    height: 100dvh;
+}
+
+.container {
+    margin: 0px auto;
+    width: max-content;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* dialog box */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.dialog-box {
+    background-color: var(--heading-span-color);
+    border-color: var(--heading-span-color);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 30rem;
+    height: 18rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    padding: 0 1.5rem;
+}
+
+.dialog-box h1 {
+    color: var(--background-color);
+    text-align: center;
+}
+
+.dialog-box .dialog-box-button {
+    background-color: var(--dialog-box-btn);
+    color: white;
+    border: none;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    padding: 9.5px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.dialog-box .dialog-box-button:hover {
+    cursor: pointer;
+}
+/* dialog box end */
+.heading-con {
+    display: grid;
+    place-items: center;
+
+    & .heading {
+        font-size: 2.5rem;
+        color: var(--heading-color);
+
+        & .heading-span {
+            color: var(--heading-span-color);
+        }
+    }
+}
+
+.today-con {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    & .today {
+        font-size: 1.5rem;
+    }
+
+    & img {
+        width: 2.5rem;
+    }
+}
+
+.progress-bar-label {
+    font-size: .8rem;
+    color: var(--ash-color);
+}
+
+.progress-container {
+    overflow: hidden;
+    height: 3rem;
+    background-color: var(--progress-con-bg);
+    border-radius: 1rem;
+}
+
+.progress-bar {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    background-color: var(--heading-span-color);
+    border-radius: 1rem;
+    transition: .5s linear;
+}
+
+.progress-bar-text {
+    z-index: 1;
+    width: max-content;
+    color: var(--background-color);
+    font-size: .7rem;
+    margin-left: 7px;
+    white-space: nowrap;
+}
+
+.details-container {
+    width: 500px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    background-color: var(--container-bg-color);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 1.5rem 2rem;
+    border-radius: 15px;
+}
+
+.alert-div {
+    height: 2.2rem;
+}
+
+.alert {
+    color: var(--alert-color);
+    display: none;
+}
+
+.task-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-container {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #0000001A;
+    background-color: white;
+    padding: .7rem 1rem;
+    border-radius: 20px;
+}
+
+.checkbox {
+    background-color: white;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1.5px solid var(--ash-color);
+    border-radius: 50%;
+}
+
+.checked {
+    display: grid;
+    place-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1.5px solid var(--heading-span-color);
+    background-color: var(--heading-span-color);
+    border-radius: 50%;
+}
+
+.fa-check {
+    color: white;
+    font-size: .5rem;
+}
+
+.checkbox:hover {
+    cursor: pointer;
+}
+
+.checked:hover {
+    cursor: pointer;
+}
+
+.input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    text-decoration: line;
+    padding-left: 1rem;
+}
+
+.line-through {
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    color: var(--heading-span-color);
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--heading-span-color);
+    -moz-text-decoration-color: var(--heading-span-color);
+}
+
+.input::placeholder {
+    color: var(--heading-color);
+    font-family: sans-serif;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    & .motivation-line {
+        height: 3rem;
+        display: grid;
+        place-items: center;
+
+        & .footer-1 {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+    }
+
+    & .footer-2 {
+        font-size: .8rem;
+    }
+
+    & .heart {
+        color: var(--alert-color)
+    }
+}
+
+/* responsiveness */
+@media only screen and (max-width: 510px) {
+    .container {
+        padding: 1rem;
+        margin-top: 2rem;
+    }
+
+    .details-container {
+        height: 48rem;
+    }
+
+    .today-con {
+
+        & .today {
+            font-size: 2.2rem;
+        }
+
+        & img {
+            width: 3.5rem;
+        }
+    }
+
+    .progress-bar-label {
+        font-size: 1.2rem;
+    }
+
+    .progress-container {
+        height: 2.5rem;
+        border-radius: 1.5rem;
+    }
+
+    .progress-bar-text {
+        font-size: 1rem;
+        margin-left: 1rem;
+    }
+
+    .progress-bar {
+        border-radius: 1.5rem;
+    }
+
+    .input {
+        font-size: 1.5rem;
+    }
+
+    .input-container {
+        height: 100px;
+        display: flex;
+        align-items: center;
+        border: 1px solid #0000001A;
+        background-color: white;
+        padding: .7rem 1rem;
+        border-radius: 20px;
+    }
+
+    .input::placeholder {
+        font-size: 1.5rem;
+    }
+
+    .checkbox {
+        background-color: white;
+        width: 2rem;
+        height: 2rem;
+        border: 1.5px solid var(--ash-color);
+        border-radius: 50%;
+    }
+
+    .fa-check {
+        font-size: 1rem;
+    }
+
+    .checked {
+        display: grid;
+        place-items: center;
+        width: 2rem;
+        height: 2rem;
+        border: 1.5px solid var(--heading-span-color);
+        background-color: var(--heading-span-color);
+        border-radius: 50%;
+    }
+
+    .footer {
+        margin-top: 2rem;
+
+        & .motivation-line {
+            & .footer-1 {
+                font-size: 1.5rem;
+                text-align: center;
+            }
+        }
+
+
+        & .footer-2 {
+            font-size: 1.2em;
+            margin-top: 1rem;
+        }
+
+        & .heart {
+            color: var(--alert-color)
+        }
+    }
+    .alert{
+        font-size: 1.3rem;
+    }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Focus on Today</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <main class="container">
+
+        <div class="overlay">
+            <div class="dialog-box">
+                <h1>Congratulations &#127881</h1>
+                <h1>You've completed all of yours goals.</h1>
+                <button class="dialog-box-button">Set new goals</button>
+            </div>
+        </div>
+
+        
+        <div class="heading-con">
+            <h1 class="heading"><span class="heading-span">Focus on</span> Today</h1>
+        </div>
+        <section class="details-container">
+            <div class="today-con">
+                <h2 class="today">Today</h2>
+                <img src="images/Sun.png" alt="sun">
+            </div>
+            <p class="progress-bar-label">Raise the bar by completing your goals!</p>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <p class="progress-bar-text"></p>
+                </div>
+            </div>
+            <div class="alert-div">
+                <p class="alert">Please set all the 3 goals</p>
+            </div>
+            <div class="task-container">
+                <div class="input-container">
+                    <button class="checkbox">
+                        <i class="fa-solid fa-check"></i>
+                    </button>
+                    <input type="text" placeholder="Add new goal..." class="input" id="firstInput" readonly="false">
+                </div>
+                <div class="input-container">
+                    <button class="checkbox">
+                        <i class="fa-solid fa-check"></i>
+                    </button>
+                    <input type="text" placeholder="Add new goal..." class="input" id="secondInput" readonly="false">
+                </div>
+                <div class="input-container">
+                    <button class="checkbox">
+                        <i class="fa-solid fa-check"></i>
+                    </button>
+                    </button>
+                    <input type="text" placeholder="Add new goal..." class="input" id="thirdInput" readonly="false">
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="motivation-line">
+                    <p class="footer-1">Move one step ahead, today!</p>
+                </div>
+                <p class="footer-2">made with <span class="heart">❤</span> by Monojit Sen.</p>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
