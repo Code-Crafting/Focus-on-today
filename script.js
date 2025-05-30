@@ -88,17 +88,19 @@ checkBox.forEach((el) => {
 
 inputs.forEach((el) => {
     if (allTasks[el.id]) {
+        
+        el.value = allTasks[el.id].taskName;
+        
+        if (allTasks[el.id].isCompleted) {
+            el.previousElementSibling.classList.toggle("checked");
+            el.classList.toggle("line-through");
+        }
 
-        // dialog box
+        // dialog-box
         if (Object.values(allTasks) && Object.values(allTasks).every(task => task.isCompleted === true)) {
             setTimeout(() => {
                 overlay.style.display = "flex";
             }, 500)
-        }
-
-        if (allTasks[el.id].isCompleted) {
-            el.previousElementSibling.classList.toggle("checked");
-            el.classList.toggle("line-through");
         }
     }
 
