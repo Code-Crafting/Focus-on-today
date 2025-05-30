@@ -12,7 +12,7 @@ const allTasks = JSON.parse(localStorage.getItem("allGoals")) || {};
 let countCompletedGoals = Object.values(allTasks).filter((task) => task.isCompleted).length;
 
 // dialog-box
-if (allTasks) {
+if (Object.values(allTasks).every(task => task.isCompleted === true)) {
     const allTakCompleted = Object.values(allTasks).every(task => task.isCompleted === true);
     setTimeout(() => {
         if (allTakCompleted) {
